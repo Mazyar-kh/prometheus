@@ -1,0 +1,7 @@
+  node_filesystem_free_bytes
+> ignoring (instance) group_left ()
+    (avg without (instance) (node_filesystem_free_bytes))
+  +
+    2 * stddev without (instance) (node_filesystem_free_bytes)
+#########################################################
+
