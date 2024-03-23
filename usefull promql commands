@@ -5,3 +5,5 @@
     2 * stddev without (instance) (node_filesystem_free_bytes)
 #########################################################
 
+{__name__=~"node_filesystem_(size|free)_bytes",device="/dev/mapper/ol-root",instance="192.168.125.188:9100"}
+################################
