@@ -1,0 +1,72 @@
+Monitoring Components
+
+1- Alerting   ---> ma bayad ye hade astane tarif konim ta be system vaziate matolb az ghyere matlob ro beshnasonim
+                   va system dar hale monitore ast va yek seri maghadir ra be dast miavarad ta agar niaz bod system 
+                   yek peyghami ra bedahad.
+
+2- Debugging ---> detect kardane moshkelat va anjame root cause analyzation (تجزیه و تحلیل علت ریشه ای) va beravim soraghe bahse trouble shoting kardane an
+investigate ---> barasi kardan
+ultimately ---> dar nahayat
+
+3- Trending ---> barasi trend etefagh haye oftade be onvane mesal barasi trafike ye site forosh gahi dar yek seri az zaman haye khas 
+                 va mitavanim yek seri situation va halat haye mored entezar ra be dast avarim  
+trend ---> ravand 
+debugging ---> eshkal zodaie
+
+
+4- plumbing ---> mitavanim chiz haye business ramonitore konim mesle tedade kharid haye 5 daghighe gozashte ra  
+
+convenient ---> rahat
+appropriate ---> monaseb
+bespoke ---> sefareshi
+=====================================================================================================================
+Categories of Monitoring 
+
+1- Metric ---> parameter ke mikhahim monitor konim mesle load cpu ya tedad khadir haye yek website ping time ya ping lost yek site 
+aggregated ---> tajmi shode
+
+
+17:00
+
+
+
+selector baraye shart gozashtan ast
+
+Matchers ---> = , 
+
+foo="" ---> yani in label ra nadashte bashad
+
+!= ---> not
+
+metric{cpu="0",mode!="idle",mode="iowait"}
+
+=~ ---> mitavan rejex ham nevesht ---> RE2
+
+__name__ ---> name metric
+
+{__name__=~".+",mode=""}
+
+node_cpu_seconds_total{mode=~"i.*",mode!="idle"}
+
+!~ ---> negative rejex
+
+{} ---> az kole TSDB hamr ro bardar neshon bede in kar kheyli hazine tolid mikone
+
+{__name__=~".+"} ---> ta hadi hame ra miavarad
+
+{__name__=~"node_cpu_seconds_total",instance="192.168.1.151:9100",job="node_exporter",cpu="0"}
+
+node_cpu_seconds_total{instance="192.168.1.151:9100",job="node_exporter",cpu="0"}
+
+{device="/dev/mapper/centos-root",instance="192.168.1.151:9100",__name__=~node_filesystem__(size|free)_bytes} ---> free va total size file system ra ba in ravesh mitavan ro ye graph did
+
+Instant Vector ---> vaghti yek query mizanim ke faghat yek meghdar be onvan mesal last ra neshan midahad be an Instant Vector migoyand
+
+stale marker
+
+Range Vector ---> Range vector are always used with the rate function ---> rate(process_cpu_seconds_total[1m])
+
+Durations ---> m minute h hours y year ---> 1h30m 90m
+
+
+
